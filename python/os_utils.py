@@ -1,3 +1,6 @@
+# Ali Babolhavaeji Jan/2022
+# this file contains snippet scripts for os
+
 import os
 
 # Create a new directory if it'sn't exist

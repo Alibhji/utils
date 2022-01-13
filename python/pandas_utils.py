@@ -1,10 +1,13 @@
+# Ali Babolhavaeji Jan/2022
+# this file contains snippet scripts for Pandas
+
 import numpy as np
 import pandas as pd
 import os
 from .os_utils import  makeDirsIfNotExist
 
 
-# split a pandas dataframe into the n chunks
+# split a pandas dataframe
 def pandas_splitter_and_save (df , numOfChunks , save = False , save_diretory = './', base_name = 'df_chunk'):
     if save:
         makeDirsIfNotExist(save_diretory)
