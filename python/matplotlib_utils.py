@@ -47,3 +47,41 @@ def display_in_different_rows( img_pathes , each_row = 4 , tagnet = None):
     plt.show()
 
 
+
+##
+import random
+from collections import Counter
+
+def plot_a_random_histogram():
+    plt_cfg = {"edgecolor": "black", "linewidth": 2}
+    def decile (x): return x//10 *10
+    #generate a list of random number
+    xs = [decile(random.choice(range(0,101)) for _ in range(60))]
+    hist = Counter(xs)
+
+    fig,ax = plt.subplots()
+    # ax.bar(hist.keys() ,hist.values() , 8 , **plt_cfg )
+    ax.bar(*list(zip(*hist.items())), 8, **ax_cfg)
+
+    ax.set_xticks([x for x in hist.keys()])
+    # plt.xticks([x for x in hist.keys()] )
+    ax.axis([-5, 105, 0, 30])
+
+    ## add text on top of the bars
+    [ax.text(x - 2, y + 1, str(y)) for x, y in hist.items()]
+
+    ax.set_title("This is a hist test")
+    ax.set_ylabel("Frequent")
+    ax.set_xlabel("Labels")
+
+    fig.show()
+
+
+
+
+
+
+
+
+
+
